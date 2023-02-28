@@ -11,7 +11,7 @@ RUN chown -R 10016:10016 /.local
 RUN chown -R 10016:10016 /.cache
 RUN chown -R 10016:10016 /.cache/huggingface
 RUN mkdir transformer_cache
-RUN chown -R 10016:10016 /transformer_cache/
+RUN chown -R 10016:10016 /transformer_cache
 
 
 COPY requirements.txt requirements.txt
