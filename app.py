@@ -15,7 +15,7 @@ def analyze_sentiment():
     positive_score = logits[1]
     negative_score = logits[0]
     label = "POSITIVE" if positive_score > negative_score else "NEGATIVE"
-    return jsonify({'label': label, 'positive_score': float(positive_score), 'negative_score': float(negative_score)})
+    return jsonify({'label': label})
 
 
 if __name__ == '__main__':
