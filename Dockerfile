@@ -22,9 +22,12 @@ RUN export PATH="/.local/bin:$PATH"
 # Set the default user for the image to the non-root user
 USER 10016
 
-COPY . .
-RUN mkdir /python-docker/transformer_cache
+RUN mkdir transformer_cache
+RUN chown -R 10016:10016 transformer_cache
 ENV TRANSFORMERS_CACHE="/python-docker/transformer_cache"
+
+COPY . .
+
 CMD [ "gunicorn", "app:app" , "--bind=0.0.0.0:3000", "--access-logfile", "-", "--error-logfile", "-"]
 #flask run --host=0.0.0.0 --port=5005
 #CMD [ "flask", "run", "--host=0.0.0.0", "--port=5005"]
