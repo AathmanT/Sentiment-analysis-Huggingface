@@ -23,7 +23,8 @@ RUN export PATH="/.local/bin:$PATH"
 USER 10016
 
 COPY . .
-
+RUN mkdir /python-docker/transformer_cache
+ENV TRANSFORMERS_CACHE="/python-docker/transformer_cache"
 CMD [ "gunicorn", "app:app" , "--bind=0.0.0.0:3000", "--access-logfile", "-", "--error-logfile", "-"]
 #flask run --host=0.0.0.0 --port=5005
 #CMD [ "flask", "run", "--host=0.0.0.0", "--port=5005"]
