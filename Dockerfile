@@ -26,4 +26,4 @@ ENV TRANSFORMERS_CACHE="/tmp"
 
 COPY . .
 
-CMD [ "gunicorn", "app:app" , "--bind=0.0.0.0:3000", "--workers=2" , "--timeout", "60", "--access-logfile", "-", "--error-logfile", "-"]
+CMD [ "gunicorn", "app:app" , "--bind=0.0.0.0:3000", "--workers=1" , "--timeout", "60", "--access-logfile", "-", "--error-logfile", "-"]
