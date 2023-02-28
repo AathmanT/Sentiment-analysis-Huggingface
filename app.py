@@ -2,8 +2,8 @@ from flask import Flask, request, jsonify
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 app = Flask(__name__)
-tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
-model = AutoModelForSequenceClassification.from_pretrained("distilbert-base-uncased-finetuned-sst-2-english")
+tokenizer = AutoTokenizer.from_pretrained("prajjwal1/bert-tiny")
+model = AutoModelForSequenceClassification.from_pretrained("prajjwal1/bert-tiny")
 
 
 @app.route('/', methods=['POST'])
