@@ -6,6 +6,7 @@ WORKDIR /python-docker
 
 RUN mkdir /.local
 RUN mkdir /.cache
+RUN mkdir /.cache/huggingface
 RUN chown -R 10016:10016 /.local
 RUN chown -R 10016:10016 /.cache
 RUN chown -R 10016:10016 /.cache/huggingface
