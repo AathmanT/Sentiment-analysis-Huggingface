@@ -24,7 +24,7 @@ RUN export PATH="/.local/bin:$PATH"
 USER 10016
 
 
-ENV TRANSFORMERS_CACHE="/python-docker/transformer_cache"
+ENV TRANSFORMERS_CACHE="/tmp"
 
 COPY . .
 
