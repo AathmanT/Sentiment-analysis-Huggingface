@@ -10,7 +10,8 @@ RUN mkdir /.cache/huggingface
 RUN chown -R 10016:10016 /.local
 RUN chown -R 10016:10016 /.cache
 RUN chown -R 10016:10016 /.cache/huggingface
-
+RUN mkdir transformer_cache
+RUN chown -R 10016:10016 /transformer_cache/
 
 
 COPY requirements.txt requirements.txt
@@ -22,8 +23,7 @@ RUN export PATH="/.local/bin:$PATH"
 # Set the default user for the image to the non-root user
 USER 10016
 
-RUN mkdir transformer_cache
-RUN chown -R 10016:10016 transformer_cache
+
 ENV TRANSFORMERS_CACHE="/python-docker/transformer_cache"
 
 COPY . .
